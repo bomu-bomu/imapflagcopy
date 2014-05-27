@@ -1,0 +1,35 @@
+<html>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<body>
+Start imap flag copy<br/>
+Username: <%= @username %>
+<br/>
+<br/>
+
+<pre>
+<div id="data"><%= @contents %></div>
+<font color="green"><div id="result"></div></font>
+</pre>
+<script type="text/javascript">
+  function update_data() {
+    if ($("#result").text() != 'Finish') {
+      $.ajax({
+        url: "/imap_convert?p=<%= @pid %>&file=<%= @filename %>",
+        accepts: "application/json",
+        dataType: "json",
+        success: function(data) {
+          if (data.output != null) {
+            $("#data").html(data.output);
+            $("#result").html(data.finish);
+          }
+        }
+      });
+    }
+  }
+
+  $(document).ready(function() {
+    setInterval(update_data, 3000);
+  });
+</script>
+</body>
+</html>

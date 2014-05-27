@@ -1,0 +1,17 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<div id="data"><%= @contents %></div>
+<script type="text/javascript">
+   function update_data() {
+  $.ajax({
+ url: "/read_file",
+ accepts: "application/json",
+ dataType: "json",
+ success: function(data) {
+    $("#data").html(data.file_contents);
+ }
+  });
+   }
+   $(document).ready(function() {
+setInterval(update_data, 1000);
+});
+</script>

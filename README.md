@@ -22,7 +22,6 @@ It transverses the mailbox, gets the message flags,  and copies back to the targ
         --password PASSWORD  (optional)
         --unseen  (optional)
     ```
-
     - *password* - use when you wants batch processing. If this option is not set. there will be prompt for password.
     - *unseen* - search only  message with flagged, answered, $forward , and unseen flags.  If this options is not set, all message will be used.
     - *host1* - source host

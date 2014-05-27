@@ -13,12 +13,12 @@ It transverses the mailbox, gets the message flags,  and copies back to the targ
 
 ## How to use.
 1.  by command line
-        > Usage: ./imap_copy.rb [options] <username>
-        >  --host1 HOST (localhost)
-        >  --host2 HOST (192.168.200.1)
-        >  --folder FOLDER (optional)
-        >  --password PASSWORD  (optional)
-        >  --unseen  (optional)
+    > Usage: ./imap_copy.rb [options] <username>
+          --host1 HOST (localhost)
+          --host2 HOST (192.168.200.1)
+          --folder FOLDER (optional)
+          --password PASSWORD  (optional)
+          --unseen  (optional)
 
     - *folder* -  use selected folder if set,  otherwise transverse all folder
     - *password* - use when you wants batch processing. If this option is not set. there will be prompt for password.
